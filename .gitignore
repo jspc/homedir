@@ -1,0 +1,21 @@
+# Emacs files
+*~
+*#
+
+# Vi/ Vim (not that I expect to use them)
+*.sw?
+
+# Other conventions
+*.tmp
+*.bak
+*.secure
+
+# OSX
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
