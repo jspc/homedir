@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+# Get all the hosts we've logged into
+
+for host in $(awk '{print $1}' ~/.ssh/known_hosts); do
+    echo $host|awk -F, '{print $1}'
+done

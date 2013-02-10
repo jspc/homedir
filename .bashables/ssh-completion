@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+
+
+_ssh() {
+    local cur
+    cur=${COMP_WORDS[COMP_CWORD]}
+
+    # Get all hostnames we've configured in .ssh/config
+    if [ -f $HOME/.ssh/config ]; then
+        for ssh in $(awk '$1 == "Host" { printf "%s\n", $2 }'  $HOME/.ssh/config); do
+            COMPREPLY+=( $( compgen -W "$ssh" $cur ) )
+        done
+    fi
+
+    # Get all the hosts we've logged into
+    if [ -f $HOME/.ssh/known_hosts ]; then
+	for line in $(awk '{print $1}' ~/.ssh/known_hosts); do
+	    host="$(echo $line|awk -F, '{print $1}')"
+	    COMPREPLY+=( $( compgen -W "$host" $cur ) )
+	done
+    fi
+}
+
+complete -F _ssh ssh
+
