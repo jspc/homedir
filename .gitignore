@@ -9,6 +9,8 @@
 *.tmp
 *.bak
 *.secure
+*.rsa*
+*_rsa*
 
 # OSX
 .DS_Store
