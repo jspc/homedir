@@ -20,4 +20,8 @@ for REPO in $REPOS; do
     fi
 done
 
+__msg "Getting third party repos"
+git clone git://git.kernel.org/pub/scm/git/git.git $HOME/projects/git
+ln -s $HOME/projects/git/contrib/completion/git-prompt.sh $HOME/.bashables/git-prompt.sh
+
 __done "git.sh"
