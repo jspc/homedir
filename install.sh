@@ -38,6 +38,9 @@ __msg "Starting the install"
 # Build dependencies
 bash install/deps.sh
 
+# Ruby/ Perl stuff
+bash install/devs.sh
+
 # Do the git stuff
 bash install/git.sh
 
