@@ -30,7 +30,7 @@ for dir in $(ls -a $HOME/.build ); do
 done
 
 cp -vf $HOME/.build/.bash_profile $HOME/
-cp -vf $HOME/.build/.bbashrc $HOME/
+cp -vf $HOME/.build/.bashrc $HOME/
 
 __msg "Starting the install"
 

@@ -6,4 +6,7 @@ done
 
 export PS1="\[\e[36m\]\@\[\e[0m\] \u@\[\e[31m\]\H\[\e[0m\] \[\e[32m\]::\[\e[0m\] \w \[\e[36m\]\$\[\e[0m\] "
 
+alias ll="ls -l"
+alias la="ls -a"
+
 [ -f $HOME/.after_homedir ] && source $HOME/.after_homedir
