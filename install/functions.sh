@@ -38,7 +38,7 @@ __continue(){
     local question
     question=$1
     __bullet
-    printf "\t\e[1;34m$1"
+    printf "\t\e[1;34m$1\n"
     read -p "[enter] or [ctrl+c]"
 }
 

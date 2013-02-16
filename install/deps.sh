@@ -18,13 +18,13 @@ case "$(uname)" in
 	PLATFORM="geany strace lsof less"
 	if [[ $(which emerge) ]]; then
 	    INSTALL_APP="portage"
-	    INSTALL_CMD="emerge"
+	    INSTALL_CMD="sudo  emerge"
 	elif [[ $(which apt-get ) ]]; then
 	    INSTALL_APP="aptitude"
-	    INSTALL_CMD="apt-get install -y"
+	    INSTALL_CMD="sudo apt-get install -y"
 	elif [[ $(which yum) ]]; then
 	    INSTALL_APP="yum"
-	    INSTALL_CMD="yum install -y"
+	    INSTALL_CMD="sudo yum install -y"
 	else
 	    __err "deps.sh" "I've actually not accounted for this distro"
 	fi
@@ -37,11 +37,11 @@ esac
 
 __msg "Installing dependencies with $INSTALL_APP"
 __msg "Platform specific packages:"
-sudo $INSTALL_CMD $PLATFORM 2>/dev/null
+$INSTALL_CMD $PLATFORM 2>/dev/null
 
 __msg "Final packages:"
 for APP in wget readline emacs; do
-    sudo $INSTALL_CMD $APP 2>/dev/null
+    $INSTALL_CMD $APP 2>/dev/null
 done
 
 __msg "Installing rvm:"
