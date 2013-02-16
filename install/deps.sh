@@ -37,11 +37,11 @@ esac
 
 __msg "Installing dependencies with $INSTALL_APP"
 __msg "Platform specific packages:"
-$INSTALL_CMD $PLATFORM 2>/dev/null
+sudo $INSTALL_CMD $PLATFORM 2>/dev/null
 
 __msg "Final packages:"
 for APP in wget readline emacs; do
-    $INSTALL_CMD $APP 2>/dev/null
+    sudo $INSTALL_CMD $APP 2>/dev/null
 done
 
 __msg "Installing rvm:"
