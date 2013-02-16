@@ -18,7 +18,7 @@ __msg "Moving directories and files"
 
 # Start shifting stuff over
 for dir in $(ls -a $HOME/.build ); do
-    [[ "$dir"="install" ]] && continue
+
     if [ -d $HOME/.build/$dir ]; then
 	[ -d $HOME/$dir ] || mkdir -v $HOME/$dir
 	
