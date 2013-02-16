@@ -4,7 +4,7 @@
 # It checks-out to a build dir and shifts the relevant bollocks about
 
 [ -d $HOME/.build ] && rm -rf $HOME/.build
-git clone git@github.com:jspc/homedir.git $HOME/.build
+git clone https://github.com/jspc/homedir.git $HOME/.build
 
 cd $HOME/.build
 source install/funtions.sh
