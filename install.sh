@@ -3,15 +3,11 @@
 # We run this script to install our home directory
 # It checks-out to a build dir and shifts the relevant bollocks about
 
-__continue(){
-    local question
-    question=$1
-    echo "$1"
-    read -p "[enter] or [ctrl+c]"
-}
-
 [ -d $HOME/.build ] && rm -rf $HOME/.build
-git clone git@github.com $HOME/.build
+git clone git@github.com:jspc/homedir.git $HOME/.build
+
+cd $HOME/.build
+source install/funtions.sh
 
 [ -f $HOME/.homedir_profile ] && __continue "Your .homedir_profile will be replaced"
 
@@ -34,4 +30,11 @@ cp -vf $HOME/.build/.homedir_profile $HOME/
 [[ $(grep homedir_profile $HOME/.bash_profile) ]] || echo -e "\ntouch $HOME/.homedir_profile\n" >> $HOME/.bash_profile 
 
 
-# Checkout my projects
+# Build dependencies
+bash install/deps.sh
+
+# Do the git stuff
+bash install/git.sh
+
+# Gems, etc.
+bash install/gems.sh
