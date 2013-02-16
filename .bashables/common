@@ -1,0 +1,21 @@
+#!/usr/bin/env bash 
+#
+# Common completion handlers
+
+__source_if_exists(){
+    [ -f $1 ] && source $1
+}
+
+
+case "$(uname)" in
+    "Darwin" )
+     	PREFIX="$(brew --prefix)"
+	;;
+    * )
+	PREFIX=""
+	;;
+esac
+
+__source_if_exists "$PREFIX/etc/bash_completion.d/cdargs-bash.sh"
+__source_if_exists "$PREFIX/etc/bash_completion.d/tmux"
+__source_if_exists "$PREFIX/etc/bash_completion.d/git-prompt"
