@@ -48,7 +48,9 @@ __msg "Installing rvm:"
 curl -L https://get.rvm.io | bash -s stable --ruby 2>/dev/null
 
 __msg "Installing ruby 1.9.3-p385"
-source $HOME/.rvm/scripts/rvm
+[ -f $HOME/.rvm/scripts/rvm ]     && source $HOME/.rvm/scripts/rvm
+[ -f /usr/local/rvm/scripts/rvm ] && source /usr/local/rvm/scripts/rvm
+
 rvm install 1.9.3-p385
 rvm use 1.9.3-p385
 
