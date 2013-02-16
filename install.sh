@@ -9,11 +9,16 @@ git clone git@github.com:jspc/homedir.git $HOME/.build
 cd $HOME/.build
 source install/funtions.sh
 
-[ -f $HOME/.homedir_profile ] && __continue "Your .homedir_profile will be replaced"
+__title "install.sh"
+
+[ -f $HOME/.bash_profile ] && __continue "Your .bash_profile will be replaced"
+[ -f $HOME/.bashrc       ] && __continue "Your .bashrc will be replaced"
+
+__msg "Moving directories and files"
 
 # Start shifting stuff over
 for dir in $(ls -a $HOME/.build ); do
-
+    [[ "$dir"="install" ]] && continue
     if [ -d $HOME/.build/$dir ]; then
 	[ -d $HOME/$dir ] || mkdir -v $HOME/$dir
 	
@@ -24,11 +29,10 @@ for dir in $(ls -a $HOME/.build ); do
     fi
 done
 
+cp -vf $HOME/.build/.bash_profile $HOME/
+cp -vf $HOME/.build/.bbashrc $HOME/
 
-# Do the various scripts
-cp -vf $HOME/.build/.homedir_profile $HOME/
-[[ $(grep homedir_profile $HOME/.bash_profile) ]] || echo -e "\ntouch $HOME/.homedir_profile\n" >> $HOME/.bash_profile 
-
+__msg "Starting the install"
 
 # Build dependencies
 bash install/deps.sh
@@ -38,3 +42,8 @@ bash install/git.sh
 
 # Gems, etc.
 bash install/gems.sh
+
+__msg "Sourcing .bashrc (to mimic login)"
+source .bashrc
+
+__done "install.sh"

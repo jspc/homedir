@@ -1,4 +1,3 @@
-
-for file in $(ls $HOME/.bashables); do
-    source $HOME/.bashables/$file
-done
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
