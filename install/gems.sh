@@ -3,7 +3,7 @@
 # Run through every Gemfile and do a bundle
 # Then pick up a coupld of our gems
 
-source functions.sh
+source $HOME/.build/install/functions.sh
 __title "gems.sh"
 
 __msg "Looking for Gemfiles"

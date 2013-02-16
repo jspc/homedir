@@ -2,7 +2,7 @@
 #
 # Install git repos
 
-source functions.sh
+source $HOME/.build/install/functions.sh
 
 __title "git.sh"
 

@@ -2,7 +2,7 @@
 #
 # Install dependencies
 
-source functions.sh
+source $HOME/.build/install/functions.sh
 
 __title 'install/deps.sh'
 __msg 'Determining build OS'

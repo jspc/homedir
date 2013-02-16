@@ -7,7 +7,7 @@
 git clone https://github.com/jspc/homedir.git $HOME/.build
 
 cd $HOME/.build
-source install/funtions.sh
+source $HOME/.build/install/functions.sh
 
 __title "install.sh"
 
