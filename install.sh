@@ -12,7 +12,7 @@ source $HOME/.build/install/functions.sh
 __title "install.sh"
 
 [ -f $HOME/.bash_profile ] && __continue "Your .bash_profile will be replaced"
-[ -f $HOME/.bashrc       ] && __continue "Your .bashrc will be replaced"
+[ -f $HOME/.bashrc ]       && __continue "Your .bashrc will be replaced"
 
 __msg "Moving directories and files"
 
