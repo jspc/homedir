@@ -13,4 +13,12 @@ source $HOME/perl5/perlbrew/etc/bashrc
 [ -f $HOME/.rvm/scripts/rvm ]     && source $HOME/.rvm/scripts/rvm
 [ -f /usr/local/rvm/scripts/rvm ] && source /usr/local/rvm/scripts/rvm
 
+
+export BIN=$HOME/bin
+export LIB=$HOME/lib
+export LOG=$HOME/log
+export TMP=$HOME/tmp
+
+export PATH=$BIN:$PATH
+
 [ -f $HOME/.after_homedir ] && source $HOME/.after_homedir
