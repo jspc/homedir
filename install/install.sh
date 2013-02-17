@@ -44,8 +44,21 @@ bash install/devs.sh
 # Do the git stuff
 bash install/git.sh
 
+# Platform specifics
+case "$(uname)" in
+    Darwin )
+	bash install/platform.darwin
+	;;
+    * )
+	bash install/platform.linux
+	;;
+esac
+
 # Gems, etc.
 bash install/gems.sh
+
+# Cpan modules
+bash install/cpan.sh
 
 __msg "Sourcing .bashrc (to mimic login)"
 source .bashrc

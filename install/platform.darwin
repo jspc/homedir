@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# Specific bits we need on mac environments
+
+source $HOME/.build/install/functions.sh
+
+__title "platform.darwin"
+
+__msg "Looking for Mac Fuse"
+if [ ! -d /Library/Frameworks/OSXFUSE.framework ]; then
+    __msg "Building Mac Fuse"
+    wget https://github.com/downloads/osxfuse/osxfuse/OSXFUSE-2.5.4.dmg -O $HOME/archives/OSXFUSE-2.5.4.dmg
+    hdiutil mount $HOME/archives/OSXFUSE-2.5.4.dmg
+    sudo installer -package "/Volumes/FUSE for OS X 1/Install OSXFUSE 2.5.pkg" -target /Library/Frameworks/
+fi
+__msg "Mac Fuse is good"
+
+__done "platform.darwin"
