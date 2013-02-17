@@ -19,7 +19,7 @@ __msg "Moving directories and files"
 # Start shifting stuff over
 for dir in $(ls $HOME/.build ); do
 
-    if [ -d $HOME/.build/$dir && "$dir"!="install" ]; then
+    if [ -d $HOME/.build/$dir -a "$dir"!="install" ]; then
 	[ -d $HOME/$dir ] || mkdir -v $HOME/$dir
 	
 	# Only non-hidden
