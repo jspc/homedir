@@ -16,7 +16,7 @@ make install
 cd -
 
 __msg "FS stuff from CPAN"
-cpan Fuse::Simple
-cpan Filesys::DiskSpace
+yes '' |cpan Fuse::Simple
+yes '' |cpan Filesys::DiskSpace
 
 __done "cpan.sh"
