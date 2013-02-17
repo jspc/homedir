@@ -20,8 +20,8 @@ __msg "Installing perlbrew"
 curl -kL http://install.perlbrew.pl | bash
 
 __msg "Installing Perl 5.16.0"
-source ~/perl5/perlbrew/etc/bashrc
-perlbrew install perl-5.16.0
+source $HOME/perl5/perlbrew/etc/bashrc
+perlbrew install perl-5.16.0 -Dusethreads
 perlbrew switch perl-5.16.0
 
 __done "devs.sh"

@@ -60,6 +60,9 @@ bash install/gems.sh
 # Cpan modules
 bash install/cpan.sh
 
+# Sys apps
+bash install/sys.sh
+
 __msg "Sourcing .bashrc (to mimic login)"
 source .bashrc
 
