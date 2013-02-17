@@ -2,6 +2,7 @@
 #
 # CPAN modules we may need
 
+source $HOME/.build/install/functions.sh
 __title "cpan.sh"
 
 __msg "Building Fuse.cpan from github"
