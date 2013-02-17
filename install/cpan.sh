@@ -12,7 +12,8 @@ make
 make install
 cd -
 
-__msg "Fuse::Simple from CPAN"
+__msg "FS stuff from CPAN"
 cpan Fuse::Simple
+cpan Filesys::DiskSpace
 
 __done "cpan.sh"

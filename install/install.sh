@@ -64,6 +64,6 @@ bash install/cpan.sh
 bash install/sys.sh
 
 __msg "Sourcing .bashrc (to mimic login)"
-source .bashrc
+source $HOME/.bashrc
 
 __done "install.sh"
