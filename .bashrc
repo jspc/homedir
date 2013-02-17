@@ -18,6 +18,7 @@ export BIN=$HOME/bin
 export LIB=$HOME/lib
 export LOG=$HOME/log
 export TMP=$HOME/tmp
+export PROJECTS=$HOME/projects
 
 export PATH=$BIN:$PATH
 
