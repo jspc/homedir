@@ -6,8 +6,9 @@ Homedir
 Install
 --
 
-curl https://raw.github.com/jspc/homedir/master/install.sh | bash
-
+```bash
+curl https://raw.github.com/jspc/homedir/master/install/install.sh | bash
+```
 
 Dependencies
 --
