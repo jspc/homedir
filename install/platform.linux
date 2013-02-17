@@ -6,6 +6,6 @@ source $HOME/.build/install/functions.sh
 
 __title "platform.linux"
 
-
+rm $HOME/sys/csi/.gitkeep
 
 __done "platform.linux"

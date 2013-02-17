@@ -19,6 +19,8 @@ export LIB=$HOME/lib
 export LOG=$HOME/log
 export TMP=$HOME/tmp
 export PROJECTS=$HOME/projects
+export SYS=$HOME/sys
+export CSI=$SYS/csi
 
 export PATH=$BIN:$PATH
 
