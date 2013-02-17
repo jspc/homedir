@@ -17,9 +17,9 @@ __title "install.sh"
 __msg "Moving directories and files"
 
 # Start shifting stuff over
-for dir in $(ls -a $HOME/.build ); do
+for dir in $(ls $HOME/.build ); do
 
-    if [ -d $HOME/.build/$dir ]; then
+    if [ -d $HOME/.build/$dir && "$dir"!="install" ]; then
 	[ -d $HOME/$dir ] || mkdir -v $HOME/$dir
 	
 	# Only non-hidden
