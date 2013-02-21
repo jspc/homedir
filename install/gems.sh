@@ -14,6 +14,7 @@ for dir in $(find $HOME/projects -name Gemfile 2>/dev/null); do
     BASE=$(dirname $dir)
     __msg "Installing Gemfile for $BASE"
     cd $BASE
+    unset RUBYOPT
     yes 'n' | bundle # For .rvmrc warnings
     cd - &>/dev/null
 done
