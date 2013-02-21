@@ -6,6 +6,9 @@ source $HOME/.build/install/functions.sh
 
 __title "git.sh"
 
+# Weird gentoo bug
+unset RUBYOPT
+
 __msg "Getting jspc repos from github"
 REPOS=$(curl https://api.github.com/users/jspc/repos 2>/dev/null| grep "clone_url" | awk -F: '{ print substr($0, index($0,$2)) "\n"}')
 NUMBER=$(for TMP_REPO in $REPOS; do echo $TMP_REPO; done | wc -l)
