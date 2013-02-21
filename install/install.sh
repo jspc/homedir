@@ -31,6 +31,7 @@ done
 
 cp -vf $HOME/.build/.bash_profile $HOME/
 cp -vf $HOME/.build/.bashrc $HOME/
+cp -vf $HOME/.build/.status $HOME/
 cp -Rv $HOME/.build/.bashables $HOME/.bashables
 
 __msg "Starting the install"

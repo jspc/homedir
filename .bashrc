@@ -1,10 +1,16 @@
+source .status
+
 [ -f $HOME/.before_homedir ] && source $HOME/.before_homedir
 
 for file in $(ls $HOME/.bashables); do
     source $HOME/.bashables/$file
 done
 
-export PS1='\[\e[36m\]\@\[\e[0m\] \u@\[\e[31m\]\H\[\e[0m\] \[\e[32m\]::\[\e[0m\] \w \[\e[36m\]\$\[\e[0m\] $(__git_ps1 "(%s)") '
+if [ "$USER" == "root" ]; then
+    export PS1='$(__status) \[\e[35m\]\u@\[\e[31m\]\H\[\e[0m\] \[\e[32m\]::\[\e[0m\] \w \[\e[36m\]\$\[\e[0m\]$(__git_ps1 "(%s)") '
+else
+    export PS1='$(__status) \u@\[\e[31m\]\H\[\e[0m\] \[\e[32m\]::\[\e[0m\] \w \[\e[36m\]\$\[\e[0m\]$(__git_ps1 "(%s)") '
+fi
 
 alias ll="ls -l"
 alias la="ls -a"
