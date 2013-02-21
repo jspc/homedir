@@ -1,4 +1,4 @@
-source .status
+source $HOME/.status
 
 [ -f $HOME/.before_homedir ] && source $HOME/.before_homedir
 
