@@ -6,6 +6,9 @@
 source $HOME/.build/install/functions.sh
 __title "gems.sh"
 
+# Weird gentoo bug
+unset RUBYOPT
+
 __msg "Looking for Gemfiles"
 for dir in $(find $HOME/projects -name Gemfile 2>/dev/null); do 
     BASE=$(dirname $dir)
