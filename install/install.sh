@@ -3,7 +3,7 @@
 # We run this script to install our home directory
 # It checks-out to a build dir and shifts the relevant bollocks about
 
-if [ "$1"="lite" ]; then
+if [ "$1" == "lite" ]; then
     echo -e "We're building the lite version!"
     cd $HOME/.build
     git pull
