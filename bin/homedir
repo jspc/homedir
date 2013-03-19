@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+# Do a simple upgrade; strictly speaking this will do a 'lite' install
+
+[ -d $HOME/.build/.git ] || git clone git@github.com:jspc/homedir.git $HOME/.build
+bash $HOME/.build/install/install.sh lite

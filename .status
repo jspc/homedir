@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# Provides helper methods for determining the status item on our PS1
+
+__status() {
+    if [ $? -ne 0 ]; then
+	echo -e "\033[1;35m-Failed-\033[0m"
+    else
+	echo -e "\033[36m$(date +"%H:%I %p")\033[0m"
+    fi
+}

@@ -3,10 +3,16 @@
 # We run this script to install our home directory
 # It checks-out to a build dir and shifts the relevant bollocks about
 
-[ -d $HOME/.build ] && rm -rf $HOME/.build
-git clone https://github.com/jspc/homedir.git $HOME/.build
+if [ "$1" == "lite" ]; then
+    echo -e "We're building the lite version!"
+    cd $HOME/.build
+    git pull
+else
+    [ -d $HOME/.build ] && rm -rf $HOME/.build
+    git clone https://github.com/jspc/homedir.git $HOME/.build
+    cd $HOME/.build
+fi
 
-cd $HOME/.build
 source $HOME/.build/install/functions.sh
 
 __title "install.sh"
@@ -31,15 +37,16 @@ done
 
 cp -vf $HOME/.build/.bash_profile $HOME/
 cp -vf $HOME/.build/.bashrc $HOME/
+cp -vf $HOME/.build/.status $HOME/
 cp -Rv $HOME/.build/.bashables $HOME/.bashables
 
 __msg "Starting the install"
 
 # Build dependencies
-bash install/deps.sh
+[ "$1"="lite" ] || bash install/deps.sh
 
 # Ruby/ Perl stuff
-bash install/devs.sh
+[ "$1"="lite" ] || bash install/devs.sh
 
 # Do the git stuff
 bash install/git.sh
@@ -61,7 +68,7 @@ bash install/gems.sh
 bash install/cpan.sh
 
 # Sys apps
-bash install/sys.sh
+[ "$1"="lite" ] || bash install/sys.sh
 
 __msg "Sourcing .bashrc (to mimic login)"
 source $HOME/.bashrc
