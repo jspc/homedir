@@ -31,3 +31,4 @@ export CSI=$SYS/csi
 export PATH=$BIN:$PATH
 
 [ -f $HOME/.after_homedir ] && source $HOME/.after_homedir
+true
