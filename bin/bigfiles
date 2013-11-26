@@ -1,0 +1,3 @@
+for F in $(find . -path ./.git -prune -o -type f -exec du -s {} \; | sort -n | tail -15 | awk '{print $NF}'); do
+  du -sh $F
+done
