@@ -6,15 +6,20 @@ source $HOME/.build/install/functions.sh
 
 __title "devs.sh"
 
-__msg "Installing rvm:"
-curl -L https://get.rvm.io | bash -s stable --ruby 2>/dev/null
+__msg "Installing rbenv"
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+mkdir -p  ~/.rbenv/plugins
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+git clone https://github.com/sstephenson/rbenv-default-gems.git ~/.rbenv/plugins/rbenv-default-gems
 
 __msg "Installing ruby 1.9.3-p385"
-[ -f $HOME/.rvm/scripts/rvm ]     && source $HOME/.rvm/scripts/rvm
-[ -f /usr/local/rvm/scripts/rvm ] && source /usr/local/rvm/scripts/rvm
-
-rvm install 1.9.3-p385
-rvm use 1.9.3-p385
+if [ -f $HOME/.rbenv/bin/rbenv ]; then
+    export PATH="${HOME}/.rbenv/bin:${PATH}"
+    eval "$(rbenv init -)"
+fi
+rbenv install 1.9.3-p385
+rbenv global 1.9.3-p385
 
 __msg "Installing perlbrew"
 curl -kL http://install.perlbrew.pl | bash

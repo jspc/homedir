@@ -9,13 +9,16 @@ __title "gems.sh"
 # Weird gentoo bug
 unset RUBYOPT
 
+__msg "Bootstrapping"
+gem install bundler
+
 __msg "Looking for Gemfiles"
 for dir in $(find $HOME/projects -name Gemfile 2>/dev/null); do 
     BASE=$(dirname $dir)
     __msg "Installing Gemfile for $BASE"
     cd $BASE
     unset RUBYOPT
-    yes 'n' | bundle # For .rvmrc warnings
+    yes 'n' | bundle
     cd - &>/dev/null
 done
 

@@ -15,10 +15,14 @@ fi
 alias ll="ls -l"
 alias la="ls -a"
 
-source $HOME/perl5/perlbrew/etc/bashrc
-[ -f $HOME/.rvm/scripts/rvm ]     && source $HOME/.rvm/scripts/rvm
-[ -f /usr/local/rvm/scripts/rvm ] && source /usr/local/rvm/scripts/rvm
+if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
+    source $HOME/perl5/perlbrew/etc/bashrc
+fi
 
+if [ -f $HOME/.rbenv/bin/rbenv ]; then
+    export PATH="${HOME}/.rbenv/bin:${PATH}"
+    eval "$(rbenv init -)"
+fi
 
 export BIN=$HOME/bin
 export LIB=$HOME/lib

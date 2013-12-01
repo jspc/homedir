@@ -11,6 +11,7 @@ else
     [ -d $HOME/.build ] && rm -rf $HOME/.build
     git clone https://github.com/jspc/homedir.git $HOME/.build
     cd $HOME/.build
+    [ -z "${HOMEDIR_SHA}" ] && git checkout "${HOMEDIR_SHA}"
 fi
 
 source $HOME/.build/install/functions.sh
@@ -43,10 +44,10 @@ cp -Rv $HOME/.build/.bashables $HOME/.bashables
 __msg "Starting the install"
 
 # Build dependencies
-[ "$1"="lite" ] || bash install/deps.sh
+[ "$1" == "lite" ] || bash install/deps.sh
 
 # Ruby/ Perl stuff
-[ "$1"="lite" ] || bash install/devs.sh
+[ "$1" == "lite" ] || bash install/devs.sh
 
 # Do the git stuff
 bash install/git.sh

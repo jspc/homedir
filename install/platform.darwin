@@ -15,4 +15,8 @@ if [ ! -d /Library/Frameworks/OSXFUSE.framework ]; then
 fi
 __msg "Mac Fuse is good"
 
+__msg "Installing basic packages"
+brew install htop tmux
+__msg "Finished installing basic packages"
+
 __done "platform.darwin"
