@@ -11,8 +11,9 @@ else
     [ -d $HOME/.build ] && rm -rf $HOME/.build
     git clone https://github.com/jspc/homedir.git $HOME/.build
     cd $HOME/.build
-    [ -z "${HOMEDIR_SHA}" ] && git checkout "${HOMEDIR_SHA}"
 fi
+
+[ -z "${HOMEDIR_SHA}" ] && git checkout "${HOMEDIR_SHA}"
 
 source $HOME/.build/install/functions.sh
 
