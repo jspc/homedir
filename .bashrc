@@ -15,9 +15,9 @@ fi
 alias ll="ls -l"
 alias la="ls -a"
 
-source $HOME/perl5/perlbrew/etc/bashrc
-[ -f $HOME/.rvm/scripts/rvm ]     && source $HOME/.rvm/scripts/rvm
-[ -f /usr/local/rvm/scripts/rvm ] && source /usr/local/rvm/scripts/rvm
+[ -f $HOME/perl5/perlbrew/etc/bashrc ] && source $HOME/perl5/perlbrew/etc/bashrc
+[ -f $HOME/.rvm/scripts/rvm ]          && source $HOME/.rvm/scripts/rvm
+[ -f /usr/local/rvm/scripts/rvm ]      && source /usr/local/rvm/scripts/rvm
 
 
 export BIN=$HOME/bin
